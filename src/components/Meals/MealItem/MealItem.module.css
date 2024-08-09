@@ -1,0 +1,31 @@
+.list {
+	margin: 1.5rem 2rem 0rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.list h3 {
+	margin: 0 0 0.3rem 0;
+}
+
+.description {
+	margin: 0rem;
+	font-style: italic;
+}
+
+.price {
+	margin-top: 0.25rem;
+	font-size: large;
+	font-weight: bold;
+	color: #aa543a;
+}
+
+.hr {
+	border-style: none;
+	border-top: 1px solid lightgray;
+	margin: 0px 2rem;
+}
+
+.hr:last-child {
+	border-style: none;
+}
