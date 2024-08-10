@@ -45,7 +45,7 @@ const MealsList = () => {
 
 	return (
 		<Card className={classes.list}>
-			<ul>{ListItem}</ul>;
+			<ul>{ListItem}</ul>
 		</Card>
 	);
 };
