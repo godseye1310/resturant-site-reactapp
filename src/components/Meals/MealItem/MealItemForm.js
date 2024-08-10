@@ -2,18 +2,26 @@ import React, { useContext, useState } from "react";
 import classes from "./MealItemForm.module.css";
 import cartContext from "../../../store/cart-context";
 
-const MealItemForm = () => {
-	const defaultNum = "1";
+const MealItemForm = (props) => {
+	const defaultNum = 1;
 	const [itemNum, setItemNum] = useState(defaultNum);
 
 	const addMealHandler = (event) => {
 		setItemNum(event.target.value);
+		// console.log(event.target.value);
 	};
 
 	const addItemCtx = useContext(cartContext);
 	const submitHandler = (event) => {
 		event.preventDefault();
-		addItemCtx.addItem(itemNum);
+		const myMeal = {
+			id: props.id,
+			name: props.name,
+			price: props.price,
+			amount: +itemNum,
+		};
+		addItemCtx.addItem(myMeal);
+		// console.log(myMeal);
 	};
 	return (
 		<>
