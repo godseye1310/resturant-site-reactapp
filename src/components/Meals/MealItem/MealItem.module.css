@@ -11,19 +11,20 @@
 .description {
 	margin: 0rem;
 	font-style: italic;
+	font-weight: bold;
 }
 
 .price {
 	margin-top: 0.25rem;
 	font-size: large;
-	font-weight: bold;
+	font-weight: bolder;
 	color: #aa543a;
 }
 
 .hr {
 	border-style: none;
 	border-top: 1px solid lightgray;
-	margin: 0px 2rem;
+	margin: 1rem 2rem 0;
 }
 
 .hr:last-child {
