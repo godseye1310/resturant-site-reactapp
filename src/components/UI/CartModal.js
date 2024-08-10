@@ -4,15 +4,11 @@ import classes from "./CartModal.module.css";
 import Card from "./Card";
 
 const Backdrop = (props) => {
-	return <div className={classes.backdrop} />;
+	return <div className={classes.backdrop} onClick={props.onClose} />;
 };
 
 const ModalContent = (props) => {
-	return (
-		<Card className={classes.modalContent}>
-			<div>{props.children}</div>
-		</Card>
-	);
+	return <Card className={classes.modalContent}>{props.children}</Card>;
 };
 
 const modalPortalID = document.getElementById("overlay");
@@ -20,7 +16,7 @@ const modalPortalID = document.getElementById("overlay");
 const CartModal = (props) => {
 	return (
 		<>
-			{ReactDOM.createPortal(<Backdrop />, modalPortalID)}
+			{ReactDOM.createPortal(<Backdrop onClose={props.onClose} />, modalPortalID)}
 
 			{ReactDOM.createPortal(
 				<ModalContent>{props.children}</ModalContent>,

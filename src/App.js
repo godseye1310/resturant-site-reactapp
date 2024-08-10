@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/Layout/Header";
-// import MealsModal from "./components/Meals/MealsModal";
 import Meals from "./components/Meals/Meals";
-import CartModal from "./components/UI/CartModal";
 import Cart from "./components/Cart/Cart";
 
 function App() {
+	const [cartDisplay, setCartDisplay] = useState(false);
+	const cartDisplayHandler = () => {
+		setCartDisplay(true);
+	};
+	const cartDisplayCloser = () => {
+		setCartDisplay(false);
+	};
 	return (
 		<div>
-			<Header />
-			<Cart />
+			<Header onShowCart={cartDisplayHandler} />
+
+			{cartDisplay && <Cart onCloseCart={cartDisplayCloser} />}
+
 			<Meals />
 		</div>
 	);
