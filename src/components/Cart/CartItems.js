@@ -7,6 +7,10 @@ const CartItems = (props) => {
 		props.onMinus(props.id);
 	};
 
+	const itemAddHandler = () => {
+		props.onAdder();
+	};
+
 	return (
 		<li>
 			<div>
@@ -17,7 +21,7 @@ const CartItems = (props) => {
 			</div>
 			<div className={classes.actionBtn}>
 				<button onClick={itemMinusHandler}>-</button>
-				<button>+</button>
+				<button onClick={itemAddHandler}>+</button>
 			</div>
 		</li>
 	);

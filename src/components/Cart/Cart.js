@@ -11,6 +11,17 @@ const Cart = (props) => {
 		cartListCtx.removeItem(id);
 	};
 
+	//parameter item
+	const itemAdder = (myitem) => {
+		let addItem = { ...myitem };
+		addItem.qty = 1;
+		cartListCtx.addItem(addItem);
+	};
+
+	// const a =(x)=>{}
+	// const b = a.bind(5)
+	// b() --> a(5)
+
 	return (
 		<CartModal onClose={props.onCloseCart}>
 			<ul className={classes.cartList}>
@@ -23,6 +34,7 @@ const Cart = (props) => {
 							price={item.price}
 							qty={item.qty}
 							onMinus={itemRemover}
+							onAdder={itemAdder.bind(null, item)}
 						/>
 					);
 				})}
