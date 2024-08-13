@@ -6,6 +6,14 @@
 .cartList li {
 	font: inherit;
 	font-size: large;
+	border-style: none;
+	border-bottom: 1px solid grey;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.cartList li h5 {
+	margin: 0.5rem 0 0.5rem;
 }
 
 .cartTotal {

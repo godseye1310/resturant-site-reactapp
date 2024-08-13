@@ -1,16 +1,35 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./Cart.module.css";
 import CartModal from "../UI/CartModal";
+import cartContext from "../../store/cart-context";
+import CartItems from "./CartItems";
 
 const Cart = (props) => {
+	const cartListCtx = useContext(cartContext);
+
+	const itemRemover = (id) => {
+		cartListCtx.removeItem(id);
+	};
+
 	return (
 		<CartModal onClose={props.onCloseCart}>
 			<ul className={classes.cartList}>
-				<li>Sushi</li>
+				{cartListCtx.items.map((item) => {
+					return (
+						<CartItems
+							key={item.id}
+							id={item.id}
+							name={item.name}
+							price={item.price}
+							qty={item.qty}
+							onMinus={itemRemover}
+						/>
+					);
+				})}
 			</ul>
 			<div className={classes.cartTotal}>
 				<h2>Total Amount</h2>
-				<h2>35.62</h2>
+				<h2>{cartListCtx.totalAmount}</h2>
 			</div>
 			<div className={classes.btn}>
 				<button
