@@ -1,6 +1,16 @@
 .qty {
-	margin: 0rem 2rem;
+	width: 3rem;
+	margin-left: 2rem;
 	padding: 2px 5px;
 	border: 1px solid grey;
 	border-radius: 5px;
+}
+
+.actionBtn button {
+	font-size: larger;
+	margin: 0 0.5rem;
+	padding: 0.1rem 0.8rem;
+	border: 1px solid brown;
+	border-radius: 5px;
+	background: rgba(209, 170, 161, 0.822);
 }

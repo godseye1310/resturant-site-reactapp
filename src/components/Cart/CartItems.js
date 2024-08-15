@@ -16,7 +16,8 @@ const CartItems = (props) => {
 			<div>
 				<h5>Meal: {props.name}</h5>
 				<h5>
-					${props.price} <span className={classes.qty}>{props.qty}</span>
+					${props.price}
+					<span className={classes.qty}>x {props.qty}</span>
 				</h5>
 			</div>
 			<div className={classes.actionBtn}>
