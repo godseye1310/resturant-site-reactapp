@@ -6,18 +6,15 @@ import CartItems from "./CartItems";
 
 const Cart = (props) => {
 	const cartListCtx = useContext(cartContext);
-
 	const itemRemover = (id) => {
 		cartListCtx.removeItem(id);
 	};
-
-	//parameter item
+	//parameter myitem comes from -> cartListCtx.items.map((item)=>{})//
 	const itemAdder = (myitem) => {
 		let addItem = { ...myitem };
 		addItem.qty = 1;
 		cartListCtx.addItem(addItem);
 	};
-
 	// const a =(x)=>{}
 	// const b = a.bind(5)
 	// b() --> a(5)

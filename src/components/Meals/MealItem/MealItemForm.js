@@ -17,7 +17,7 @@ const MealItemForm = (props) => {
 		const myMeal = {
 			id: props.id,
 			name: props.name,
-			price: props.price,
+			price: +props.price,
 			qty: +itemNum,
 		};
 		addItemCtx.addItem(myMeal);
