@@ -60,13 +60,13 @@ const CartProvider = (props) => {
 		dispatchCartAction({ type: "REMOVE", id: id });
 	};
 
-	const cartctx = {
+	const cartCtx = {
 		items: cartState.items,
 		totalAmount: cartState.totalAmount,
 		addItem: addItemHandler,
 		removeItem: remmoveItemHandler,
 	};
-	return <cartContext.Provider value={cartctx}>{props.children}</cartContext.Provider>;
+	return <cartContext.Provider value={cartCtx}>{props.children}</cartContext.Provider>;
 };
 
 export default CartProvider;

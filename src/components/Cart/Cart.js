@@ -19,6 +19,11 @@ const Cart = (props) => {
 	// const b = a.bind(5)
 	// b() --> a(5)
 
+	const handleOrder = () => {
+		console.log("Ordering Your Meal...");
+		// alert("Ordering Your Meal...");
+	};
+
 	return (
 		<CartModal onClose={props.onCloseCart}>
 			<ul className={classes.cartList}>
@@ -48,7 +53,7 @@ const Cart = (props) => {
 				>
 					Close
 				</button>
-				<button className={classes["btn-order"]} type="button">
+				<button className={classes["btn-order"]} type="button" onClick={handleOrder}>
 					Order
 				</button>
 			</div>
