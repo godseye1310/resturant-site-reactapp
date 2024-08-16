@@ -41,7 +41,6 @@ const cartReducer = (state, action) => {
 			}
 		}
 		// console.log(state.items);
-		// console.log(state.totalAmount);
 		return {
 			items: updatedItems,
 			totalAmount: +updatedtotalAmount.toFixed(2),
@@ -58,7 +57,6 @@ const CartProvider = (props) => {
 		dispatchCartAction({ type: "ADD", item: item });
 	};
 	const remmoveItemHandler = (id) => {
-		// console.log(id);
 		dispatchCartAction({ type: "REMOVE", id: id });
 	};
 
